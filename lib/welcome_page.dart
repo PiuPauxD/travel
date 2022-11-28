@@ -65,7 +65,7 @@ class _WelcomePageState extends State<WelcomePage> {
                   ),
                 ),
                 child: Container(
-                  margin: const EdgeInsets.only(top: 100, left: 20, right: 20),
+                  margin: const EdgeInsets.only(top: 55, left: 20, right: 20),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -80,7 +80,7 @@ class _WelcomePageState extends State<WelcomePage> {
                             size: 30,
                           ),
                           SizedBox(
-                            height: 20,
+                            height: 15,
                           ),
                           Container(
                             width: 250,
@@ -91,13 +91,17 @@ class _WelcomePageState extends State<WelcomePage> {
                           ),
                           SizedBox(height: 40),
                           GestureDetector(
-                            onTap: () async {
+                            onTap: () {
                               BlocProvider.of<AppCubits>(context).getData();
                             },
                             child: Container(
-                                width: 200,
-                                child: Row(
-                                    children: [ResponsiveButton(width: 120)])),
+                              width: 200,
+                              child: Row(
+                                children: [
+                                  ResponsiveButton(width: 120),
+                                ],
+                              ),
+                            ),
                           ),
                         ],
                       ),

@@ -19,12 +19,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     "camping.png": "Camping",
     "hotels.png": "Hotels",
   };
-  List pics = [
-    "img/Paris.jpg",
-    "img/London.jpg",
-    "img/Malibu.jpg",
-    "img/NewYork.jpg",
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -106,19 +100,26 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         itemCount: info.length,
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (BuildContext context, int index) {
-                          return Container(
-                            margin: const EdgeInsets.only(right: 15, top: 10),
-                            width: 200,
-                            height: 300,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              color: Colors.white,
-                              image: DecorationImage(
-                                image: NetworkImage(
-                                  "https://www.pinterest.com/olegich604/travel/" +
-                                      info[index].img,
+                          return GestureDetector(
+                            onTap: () {
+                              BlocProvider.of<AppCubits>(context).detaiPage(
+                                info[index],
+                              );
+                            },
+                            child: Container(
+                              margin: const EdgeInsets.only(right: 15, top: 10),
+                              width: 200,
+                              height: 300,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: Colors.white,
+                                image: DecorationImage(
+                                  image: NetworkImage(
+                                    "http://mark.bslmeiyu.com/uploads/" +
+                                        info[index].img,
+                                  ),
+                                  fit: BoxFit.cover,
                                 ),
-                                fit: BoxFit.cover,
                               ),
                             ),
                           );
@@ -162,6 +163,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       return Container(
                         margin: const EdgeInsets.only(right: 30),
                         child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Container(
                               margin: const EdgeInsets.only(right: 50),
@@ -177,6 +179,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                   fit: BoxFit.cover,
                                 ),
                               ),
+                            ),
+                            SizedBox(
+                              height: 10,
                             ),
                             Container(
                               child: AppText(

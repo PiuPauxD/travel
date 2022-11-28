@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:travel/widgets/app_texts.dart';
 
 class ResponsiveButton extends StatelessWidget {

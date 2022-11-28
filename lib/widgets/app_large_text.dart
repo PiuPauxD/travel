@@ -1,7 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class AppLargeText extends StatelessWidget {
   double size;
@@ -10,7 +7,7 @@ class AppLargeText extends StatelessWidget {
 
   AppLargeText({
     Key? key,
-    this.size = 30,
+    this.size = 26,
     required this.text,
     this.color = Colors.black,
   });
